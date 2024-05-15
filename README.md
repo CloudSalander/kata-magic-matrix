@@ -11,11 +11,11 @@ Donada una matriu 3x3, per exemple:
 Verificar si la matriu és [màgica](https://en.wikipedia.org/wiki/Magic_square) o no.
 
 *Input*
-- [2,7,6
+  [2,7,6
    9,5,1
    4,3,8]
 
-- [3,7,6
+  [3,7,6
    9,5,1 
    4,3,8]
 
