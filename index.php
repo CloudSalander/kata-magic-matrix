@@ -1,4 +1,5 @@
 <?php 
+define('ARRAY_SIZE',3);
 
 $matrix = [[2,7,6],
            [9,5,1],
@@ -10,10 +11,16 @@ function isMagicMatrix(array $matrix): bool {
 }
 
 function checkSumRows(array $matrix): bool {
-    return false;
+    $row_con = 1;
+    $sum = array_sum($matrix[0]);
+    while($row_con < ARRAY_SIZE) {
+        if($sum != array_sum($matrix[$row_con])) return false;
+        ++$row_con;
+    }
+    return true;
 }
 
-function checkSumColumns(array $matrix): bool {
+function checkSumColums (array $matrix): bool {
     return false;
 }
 
