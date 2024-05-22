@@ -22,9 +22,7 @@ function checkSumRows(array $matrix): bool {
 
 function checkSumColums (array $matrix): bool {
     $transposed_matrix = transposeMatrix($matrix);
-    print_r($matrix);
-    print_r($transposed_matrix);
-    return false;
+    return checkSumRows($transposed_matrix);
 }
 
 function transposeMatrix(array $matrix): array {
