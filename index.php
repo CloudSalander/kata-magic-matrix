@@ -36,7 +36,27 @@ function transposeMatrix(array $matrix): array {
 }
 
 function checkSumDiagonals(array $matrix): bool {
-    return false;
+    return checkFirstDiagonal($matrix) == checkSecondDiagonal($matrix);
+}
+
+function checkFirstDiagonal($matrix): bool {
+    $i = $j = $sum = 0;
+    while($i < ARRAY_SIZE) {
+        $sum += $matrix[$i][$i];
+        ++$i;
+    }
+    return $sum;
+}
+
+function checkSecondDiagonal($matrix): bool {
+    $i = $sum = 0;
+    $j = ARRAY_SIZE - 1;
+    while($i < ARRAY_SIZE) {
+        $sum += $matrix[$i][$j];
+        ++$i;
+        --$j;
+    }
+    return $sum;
 }
 
 if(isMagicMatrix($matrix)) {
