@@ -21,22 +21,20 @@ function checkSumRows(array $matrix): bool {
 }
 
 function checkSumColums (array $matrix): bool {
-    $column_con = 0;
-    $sum = 0;
-    while($column_con < ARRAY_SIZE) {
-        $row_con = 0;
-        $sum_aux = 0;
-        while($row_con < ARRAY_SIZE) {
-            $sum_aux += $matrix[$column_con][$row_con];
-            ++$row_con;
+    $transposed_matrix = transposeMatrix($matrix);
+    print_r($matrix);
+    print_r($transposed_matrix);
+    return false;
+}
+
+function transposeMatrix(array $matrix): array {
+    $transposedMatrix = [];
+    foreach ($matrix as $row => $values) {
+        foreach ($values as $column => $value) {
+            $transposedMatrix[$column][$row] = $value;
         }
-        if($column_con == 0) $sum = $sum_aux;
-        else {
-            if($sum != $sum_aux) return false;
-        }
-        ++$column_con;
     }
-    return true;
+    return $transposedMatrix;
 }
 
 function checkSumDiagonals(array $matrix): bool {
